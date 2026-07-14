@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 
 void main() {
@@ -9,8 +7,8 @@ void main() {
 String name = "hello abed";
 int n = 33;
 double d = 3.14;
-List mylist = [1, 2, 3, 4, "haje "];
-Map mymap = {"name": "abed", "age": 33, "height": 1.75};
+List list = [1, 2, 3, 4, "hade "];
+Map map = {"name": "abed", "age": 33, "height": 1.75};
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -27,7 +25,7 @@ class MyApp extends StatelessWidget {
           brightness: Brightness.dark,
         ),
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'practice make perfect'),
     );
   }
 }
@@ -50,12 +48,47 @@ class _MyHomePageState extends State<MyHomePage> {
 
         title: Text(widget.title),
       ),
-      body: Image.asset(
-        'assets/image/bg.jpg',
-        fit: BoxFit.cover,
-        height: 200,
-        width: 200,
+      body: Stack(
+        children: [
+          Image.asset('assets/image/bg.jpg', fit: BoxFit.cover),
+
+          // Fixed-size box, pinned to top-left with explicit size
+          Positioned(
+            top: 20,
+            left: 20,
+            width: 100,
+            height: 50,
+            child: Container(
+              color: Colors.black54,
+              child: Center(
+                child: Text('Tag', style: TextStyle(color: Colors.white)),
+              ),
+            ),
+          ),
+
+          // Stretched across the bottom, using opposite sides instead of width/height
+          Positioned(
+            bottom: 0,
+            left: 0,
+            right: 0,
+            height: 60,
+            child: Container(
+              color: Colors.black54,
+              child: Center(
+                child: Text(
+                  'Caption bar',
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+            ),
+          ),
+        ],
       ),
     );
+    /* body: Image.network(
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVVZ65VaVMw2WQ6vn3znem5zBZZRU2bX1LRc3NAdVVuA&s=10',
+        height: double.infinity,
+        fit: BoxFit.cover,// what infinite is
+    );*/
   }
 }
