@@ -53,45 +53,11 @@ class _MyHomePageState extends State<MyHomePage> {
         padding: EdgeInsets.all(8.0),
         child: Stack(
           children: [
-            Image.asset('assets/image/bg.jpg', fit: BoxFit.cover),
-            Positioned(
-              right: 100,
-              bottom: 300,
-              child: SizedBox(
-                height: 100,
-                width: 100,
-                child: Text('abed saeed '),
-              ),
-            ),
-            // Fixed-size box, pinned to top-left with explicit size
-            Positioned(
-              top: 20,
-              left: 20,
-              width: 100,
-              height: 50,
-              child: Container(
-                color: Colors.black54,
-                child: Center(
-                  child: Text('Tag', style: TextStyle(color: Colors.white)),
-                ),
-              ),
-            ),
-
-            // Stretched across the bottom, using opposite sides instead of width/height
-            Positioned(
-              bottom: 2,
-              left: 0,
-              right: 0,
-              height: 60,
-              child: Container(
-                color: Colors.black54,
-                child: Center(
-                  child: Text(
-                    'Caption bar',
-                    style: TextStyle(color: Colors.white),
-                  ),
-                ),
-              ),
+            ListTile(
+              leading: Icon(Icons.explicit_sharp),
+              tileColor: Colors.red,
+              title: Text('hello abed saeed '),
+              onTap: () {},
             ),
           ],
         ),
