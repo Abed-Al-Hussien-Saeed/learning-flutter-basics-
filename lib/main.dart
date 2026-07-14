@@ -68,27 +68,19 @@ class _MyHomePageState extends State<MyHomePage> {
 
           // Stretched across the bottom, using opposite sides instead of width/height
           Positioned(
-            bottom: 0,
+            bottom: 10,
             left: 0,
             right: 0,
             height: 60,
             child: Container(
               color: Colors.black54,
               child: Center(
-                child: Text(
-                  'Caption bar',
-                  style: TextStyle(color: Colors.white),
-                ),
+                child: Text('Name is :', style: TextStyle(color: Colors.white)),
               ),
             ),
           ),
         ],
       ),
     );
-    /* body: Image.network(
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVVZ65VaVMw2WQ6vn3znem5zBZZRU2bX1LRc3NAdVVuA&s=10',
-        height: double.infinity,
-        fit: BoxFit.cover,// what infinite is
-    );*/
   }
 }
