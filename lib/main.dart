@@ -49,20 +49,17 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
         leading: Icon(Icons.notification_add, color: Colors.amberAccent),
       ),
-      body: Container(
-        padding: EdgeInsets.all(8.0),
-        child: Stack(
-          children: [
-            ListTile(
-              leading: Icon(Icons.explicit_sharp),
-              tileColor: Colors.red,
-              title: Text('hello abed saeed '),
-              onTap: () {
-                print("hello u taped on this lol");
-              },
-            ),
-          ],
-        ),
+      body: Wrap(
+        children: [
+          Text(
+            ' jajdaaadasddddddddddddddddddddddddddddadsasdqqqqqqqqqqqqqqqqqqqqqqqqqqeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeffffffffffffffffffffffffffttttttttttttttttttttt',
+          ),
+          Text('data'),
+          Text(' jajdaa'),
+          Text('data'),
+          Text(' jajdaa'),
+          Text('data'),
+        ],
       ),
     );
     /* body: Image.network(
