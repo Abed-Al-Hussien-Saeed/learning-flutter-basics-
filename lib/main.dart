@@ -47,40 +47,60 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
 
         title: Text(widget.title),
+        leading: Icon(Icons.notification_add, color: Colors.amberAccent),
       ),
-      body: Stack(
-        children: [
-          Image.asset('assets/image/bg.jpg', fit: BoxFit.cover),
-
-          // Fixed-size box, pinned to top-left with explicit size
-          Positioned(
-            top: 20,
-            left: 20,
-            width: 100,
-            height: 50,
-            child: Container(
-              color: Colors.black54,
-              child: Center(
-                child: Text('Tag', style: TextStyle(color: Colors.white)),
+      body: Container(
+        padding: EdgeInsets.all(8.0),
+        child: Stack(
+          children: [
+            Image.asset('assets/image/bg.jpg', fit: BoxFit.cover),
+            Positioned(
+              right: 100,
+              bottom: 300,
+              child: SizedBox(
+                height: 100,
+                width: 100,
+                child: Text('abed saeed '),
               ),
             ),
-          ),
-
-          // Stretched across the bottom, using opposite sides instead of width/height
-          Positioned(
-            bottom: 10,
-            left: 0,
-            right: 0,
-            height: 60,
-            child: Container(
-              color: Colors.black54,
-              child: Center(
-                child: Text('Name is :', style: TextStyle(color: Colors.white)),
+            // Fixed-size box, pinned to top-left with explicit size
+            Positioned(
+              top: 20,
+              left: 20,
+              width: 100,
+              height: 50,
+              child: Container(
+                color: Colors.black54,
+                child: Center(
+                  child: Text('Tag', style: TextStyle(color: Colors.white)),
+                ),
               ),
             ),
-          ),
-        ],
+
+            // Stretched across the bottom, using opposite sides instead of width/height
+            Positioned(
+              bottom: 2,
+              left: 0,
+              right: 0,
+              height: 60,
+              child: Container(
+                color: Colors.black54,
+                child: Center(
+                  child: Text(
+                    'Caption bar',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
+    /* body: Image.network(
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVVZ65VaVMw2WQ6vn3znem5zBZZRU2bX1LRc3NAdVVuA&s=10',
+        height: double.infinity,
+        fit: BoxFit.cover,// what infinite is
+    );*/
   }
 }
