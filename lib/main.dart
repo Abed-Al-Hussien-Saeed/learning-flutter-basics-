@@ -57,7 +57,9 @@ class _MyHomePageState extends State<MyHomePage> {
               leading: Icon(Icons.explicit_sharp),
               tileColor: Colors.red,
               title: Text('hello abed saeed '),
-              onTap: () {},
+              onTap: () {
+                print("hello u taped on this lol");
+              },
             ),
           ],
         ),
