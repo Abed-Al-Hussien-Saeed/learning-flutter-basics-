@@ -33,6 +33,14 @@ class MyApp extends StatelessWidget {
           ],
           selectedIndex: 0,
         ),
+        drawer: Drawer(
+          child: Column(
+            children: [
+              DrawerHeader(child: Text('Drawer')),
+              ListTile(title: Text('logout')),
+            ],
+          ),
+        ),
         floatingActionButton: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
