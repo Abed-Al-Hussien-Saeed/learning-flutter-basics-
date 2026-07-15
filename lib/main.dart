@@ -21,7 +21,16 @@ class MyApp extends StatelessWidget {
         ),
       ),
 
-      home: Scaffold(),
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text("my flutter app title "),
+          centerTitle: true,
+          leading: Icon(Icons.login),
+          actions: [Text('hello'), Icon(Icons.login)],
+          backgroundColor: Colors.red,
+          //bottom: ,
+        ),
+      ),
     );
   }
 }
