@@ -4,68 +4,24 @@ void main() {
   runApp(const MyApp());
 }
 
-String name = "hello abed";
-int n = 33;
-double d = 3.14;
-List list = [1, 2, 3, 4, "hade "];
-Map map = {"name": "abed", "age": 33, "height": 1.75};
-
+// stateless and
+// martial app
+// scafold
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
       theme: ThemeData(
-        colorScheme: .fromSeed(
-          seedColor: Colors.greenAccent,
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.teal,
           brightness: Brightness.dark,
         ),
       ),
-      home: const MyHomePage(title: 'practice make perfect'),
+
+      home: Scaffold(),
     );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-
-        title: Text(widget.title),
-        leading: Icon(Icons.notification_add, color: Colors.amberAccent),
-      ),
-      body: Wrap(
-        children: [
-          Text(
-            ' jajdaaadasddddddddddddddddddddddddddddadsasdqqqqqqqqqqqqqqqqqqqqqqqqqqeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeffffffffffffffffffffffffffttttttttttttttttttttt',
-          ),
-          Text('data'),
-          Text(' jajdaa'),
-          Text('data'),
-          Text(' jajdaa'),
-          Text('data'),
-        ],
-      ),
-    );
-    /* body: Image.network(
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVVZ65VaVMw2WQ6vn3znem5zBZZRU2bX1LRc3NAdVVuA&s=10',
-        height: double.infinity,
-        fit: BoxFit.cover,// what infinite is
-    );*/
   }
 }
