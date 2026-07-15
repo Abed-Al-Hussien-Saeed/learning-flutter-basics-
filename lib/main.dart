@@ -33,6 +33,24 @@ class MyApp extends StatelessWidget {
           ],
           selectedIndex: 0,
         ),
+        floatingActionButton: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            FloatingActionButton(
+              onPressed: () {
+                print("helloo hru ");
+              },
+              child: Icon(Icons.add),
+            ),
+            SizedBox(height: 30),
+            FloatingActionButton(
+              onPressed: () {
+                print("helloo hru ");
+              },
+              child: Icon(Icons.add),
+            ),
+          ],
+        ),
       ),
     );
   }
