@@ -22,13 +22,16 @@ class MyApp extends StatelessWidget {
       ),
 
       home: Scaffold(
-        appBar: AppBar(
-          title: Text("my flutter app title "),
-          centerTitle: true,
-          leading: Icon(Icons.login),
-          actions: [Text('hello'), Icon(Icons.login)],
-          backgroundColor: Colors.red,
-          //bottom: ,
+        appBar: AppBar(title: Text("my flutter app title "), centerTitle: true),
+        bottomNavigationBar: NavigationBar(
+          destinations: [
+            NavigationDestination(icon: Icon(Icons.home), label: "home "),
+            NavigationDestination(
+              icon: Icon(Icons.person_3_rounded),
+              label: "profile ",
+            ),
+          ],
+          selectedIndex: 0,
         ),
       ),
     );
