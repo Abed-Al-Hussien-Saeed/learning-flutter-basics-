@@ -4,6 +4,8 @@ void main() {
   runApp(const MyApp());
 }
 
+String? title;
+
 // stateless and
 // martial app
 // scafold
@@ -22,7 +24,7 @@ class MyApp extends StatelessWidget {
       ),
 
       home: Scaffold(
-        appBar: AppBar(title: Text("my flutter app title "), centerTitle: true),
+        appBar: AppBar(title: Text(title!), centerTitle: true),
         bottomNavigationBar: NavigationBar(
           destinations: [
             NavigationDestination(icon: Icon(Icons.home), label: "home "),
@@ -33,12 +35,9 @@ class MyApp extends StatelessWidget {
           ],
           selectedIndex: 0,
         ),
-        drawer: Drawer(
-          child: Column(
-            children: [
-              DrawerHeader(child: Text('Drawer')),
-              ListTile(title: Text('logout')),
-            ],
+        drawer: SafeArea(
+          child: Drawer(
+            child: Column(children: [ListTile(title: Text('logout'))]),
           ),
         ),
         floatingActionButton: Column(
@@ -53,7 +52,7 @@ class MyApp extends StatelessWidget {
             SizedBox(height: 30),
             FloatingActionButton(
               onPressed: () {
-                print("helloo hru ");
+                print("helloo abed saeed  ");
               },
               child: Icon(Icons.add),
             ),
