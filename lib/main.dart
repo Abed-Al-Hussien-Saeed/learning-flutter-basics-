@@ -4,11 +4,11 @@ void main() {
   runApp(const MyApp());
 }
 
-String? title;
+String title = 'hello abed saeed ';
 
-// stateless and
-// martial app
-// scafold
+// statefull can referesh
+//stateless can't referch
+//setstate to refersh
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -23,41 +23,43 @@ class MyApp extends StatelessWidget {
         ),
       ),
 
-      home: Scaffold(
-        appBar: AppBar(title: Text(title!), centerTitle: true),
-        bottomNavigationBar: NavigationBar(
-          destinations: [
-            NavigationDestination(icon: Icon(Icons.home), label: "home "),
-            NavigationDestination(
-              icon: Icon(Icons.person_3_rounded),
-              label: "profile ",
-            ),
-          ],
-          selectedIndex: 0,
-        ),
-        drawer: SafeArea(
-          child: Drawer(
-            child: Column(children: [ListTile(title: Text('logout'))]),
+      home: Myhomepage(),
+    );
+  }
+}
+
+class Myhomepage extends StatefulWidget {
+  const Myhomepage({super.key});
+
+  @override
+  State<Myhomepage> createState() => _MyhomepageState();
+}
+
+class _MyhomepageState extends State<Myhomepage> {
+  // U CAN WRITE DOWN YOUR VARIBES
+  int current_index = 0;
+  @override
+  Widget build(BuildContext context) {
+    // or here  nad here when u referch the screen u find it referchs too
+    return Scaffold(
+      appBar: AppBar(title: Text(title), centerTitle: true), // AppBar
+      body: current_index == 0
+          ? Center(child: Text('Home Page'))
+          : Center(child: Text('Profile Page')),
+      bottomNavigationBar: NavigationBar(
+        destinations: [
+          NavigationDestination(icon: Icon(Icons.home), label: 'Home'),
+          NavigationDestination(
+            icon: Icon(Icons.person_3_rounded),
+            label: 'Profile',
           ),
-        ),
-        floatingActionButton: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            FloatingActionButton(
-              onPressed: () {
-                print("helloo hru ");
-              },
-              child: Icon(Icons.add),
-            ),
-            SizedBox(height: 30),
-            FloatingActionButton(
-              onPressed: () {
-                print("helloo abed saeed  ");
-              },
-              child: Icon(Icons.add),
-            ),
-          ],
-        ),
+        ], // NavigationDestination
+        onDestinationSelected: (int value) {
+          setState(() {
+            current_index = value;
+          });
+        },
+        selectedIndex: current_index,
       ),
     );
   }
