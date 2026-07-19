@@ -4,62 +4,63 @@ void main() {
   runApp(const MyApp());
 }
 
-String title = 'hello abed saeed ';
-
-// statefull can referesh
-//stateless can't referch
-//setstate to refersh
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
 
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  // varible to change the current index or the thing we are at
+  int currentIndex = 0;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.teal,
-          brightness: Brightness.dark,
-        ),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.yellow),
+        brightness: Brightness.light,
       ),
-
-      home: Myhomepage(),
-    );
-  }
-}
-
-class Myhomepage extends StatefulWidget {
-  const Myhomepage({super.key});
-
-  @override
-  State<Myhomepage> createState() => _MyhomepageState();
-}
-
-class _MyhomepageState extends State<Myhomepage> {
-  // U CAN WRITE DOWN YOUR VARIBES
-  int current_index = 0;
-  @override
-  Widget build(BuildContext context) {
-    // or here  nad here when u referch the screen u find it referchs too
-    return Scaffold(
-      appBar: AppBar(title: Text(title), centerTitle: true), // AppBar
-      body: current_index == 0
-          ? Center(child: Text('Home Page'))
-          : Center(child: Text('Profile Page')),
-      bottomNavigationBar: NavigationBar(
-        destinations: [
-          NavigationDestination(icon: Icon(Icons.home), label: 'Home'),
-          NavigationDestination(
-            icon: Icon(Icons.person_3_rounded),
-            label: 'Profile',
+      home: Scaffold(
+        appBar: AppBar(title: Text('maps of flutter')), // or add drawer here
+        bottomNavigationBar: NavigationBar(
+          destinations: [
+            NavigationDestination(
+              icon: Icon(Icons.maps_home_work),
+              label: 'map',
+            ),
+            NavigationDestination(
+              icon: Icon(Icons.map_outlined),
+              label: 'map1',
+            ),
+          ],
+          onDestinationSelected: (int value) {
+            setState(() {
+              currentIndex = value;
+            });
+          },
+          selectedIndex: currentIndex,
+        ),
+        // add drawers here
+        drawer: Drawer(
+          child: Column(
+            children: [
+              ListTile(
+                title: Text('Item 1'),
+                onTap: () {
+                  // Handle item 1 tap
+                },
+              ),
+              ListTile(
+                title: Text('Item 2'),
+                onTap: () {
+                  // Handle item 2 tap
+                },
+              ),
+            ],
           ),
-        ], // NavigationDestination
-        onDestinationSelected: (int value) {
-          setState(() {
-            current_index = value;
-          });
-        },
-        selectedIndex: current_index,
+        ),
       ),
     );
   }
