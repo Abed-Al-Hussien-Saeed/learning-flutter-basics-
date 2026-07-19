@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'widgets/navB.dart';
 
 void main() {
   runApp(const MyApp());
@@ -24,24 +25,7 @@ class _MyAppState extends State<MyApp> {
       ),
       home: Scaffold(
         appBar: AppBar(title: Text('maps of flutter')), // or add drawer here
-        bottomNavigationBar: NavigationBar(
-          destinations: [
-            NavigationDestination(
-              icon: Icon(Icons.maps_home_work),
-              label: 'map',
-            ),
-            NavigationDestination(
-              icon: Icon(Icons.map_outlined),
-              label: 'map1',
-            ),
-          ],
-          onDestinationSelected: (int value) {
-            setState(() {
-              currentIndex = value;
-            });
-          },
-          selectedIndex: currentIndex,
-        ),
+        bottomNavigationBar: navB(),
         // add drawers here
         drawer: Drawer(
           child: Column(
