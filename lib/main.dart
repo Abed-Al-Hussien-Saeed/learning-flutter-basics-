@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:the_ultimate_flutter_tutorial_for_beginners/Views/pages/Widget_tree.dart';
 import 'widgets/navB.dart';
 
 void main() {
@@ -23,29 +24,7 @@ class _MyAppState extends State<MyApp> {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.yellow),
         brightness: Brightness.light,
       ),
-      home: Scaffold(
-        appBar: AppBar(title: Text('maps of flutter')), // or add drawer here
-        bottomNavigationBar: navB(),
-        // add drawers here
-        drawer: Drawer(
-          child: Column(
-            children: [
-              ListTile(
-                title: Text('Item 1'),
-                onTap: () {
-                  // Handle item 1 tap
-                },
-              ),
-              ListTile(
-                title: Text('Item 2'),
-                onTap: () {
-                  // Handle item 2 tap
-                },
-              ),
-            ],
-          ),
-        ),
-      ),
+      home: WidgetTree(),
     );
   }
 }
