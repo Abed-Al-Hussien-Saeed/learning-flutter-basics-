@@ -77,15 +77,15 @@ class _ProfilePageState extends State<ProfilePage> {
                 print(Slidervalue);
               },
             ),
-            GestureDetector(
+            InkWell(
+              splashColor: Colors.red,
               onTap: () {
                 print("u tapped the image");
               },
-              child: Image.asset(
-                'assets/image/bg.jpg',
-                width: 200,
+              child: Container(
+                width: double.infinity,
                 height: 200,
-                fit: BoxFit.cover,
+                color: Colors.white12,
               ),
             ),
           ], //childrenof the column
