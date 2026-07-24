@@ -84,10 +84,28 @@ class _ProfilePageState extends State<ProfilePage> {
               },
               child: Container(
                 width: double.infinity,
-                height: 200,
+                height: 50,
                 color: Colors.white12,
               ),
             ),
+            ElevatedButton(
+              onPressed: () {},
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.red,
+                foregroundColor: Colors.white,
+              ),
+              child: Text('Click me'),
+            ),
+            ElevatedButton(
+              onPressed: () {},
+              style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
+              child: Text('Click me'),
+            ),
+            FilledButton(onPressed: () {}, child: Text('Click me')),
+            TextButton(onPressed: () {}, child: Text('Click me')),
+            OutlinedButton(onPressed: () {}, child: Text('Click me')),
+            CloseButton(),
+            BackButton(),
           ], //childrenof the column
         ),
       ),
