@@ -12,7 +12,22 @@ class WidgetTree extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('maps of flutter')), // or add drawer here
+      appBar: AppBar(
+        title: Text('maps of flutter'),
+        actions: [
+          IconButton(
+            onPressed: () {
+              IsDarkModeNotifier.value = !IsDarkModeNotifier.value;
+            },
+            icon: ValueListenableBuilder(
+              valueListenable: IsDarkModeNotifier,
+              builder: (context, Isdartkmode, child) {
+                return Icon(Isdartkmode ? Icons.dark_mode : Icons.light_mode);
+              },
+            ),
+          ),
+        ],
+      ), // or add drawer here
       bottomNavigationBar: navB(),
       body: ValueListenableBuilder(
         valueListenable: selectedPageNotifier,
