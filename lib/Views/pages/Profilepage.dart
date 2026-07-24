@@ -47,7 +47,7 @@ class _ProfilePageState extends State<ProfilePage> {
               });
             },
           ),
-          Switch(
+          Switch.adaptive(
             value: Isswitched,
             onChanged: (value) {
               setState(() {
@@ -55,7 +55,7 @@ class _ProfilePageState extends State<ProfilePage> {
               });
             },
           ),
-          SwitchListTile(
+          SwitchListTile.adaptive(
             title: Text('Click me'),
             value: Isswitched,
             onChanged: (value) {
