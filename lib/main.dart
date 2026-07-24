@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:the_ultimate_flutter_tutorial_for_beginners/Views/pages/Widget_tree.dart';
-import 'widgets/navB.dart';
 
 void main() {
   runApp(const MyApp());
@@ -23,7 +22,7 @@ class _MyAppState extends State<MyApp> {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.yellow),
         brightness: Brightness.light,
-      ),
+         ),
       home: WidgetTree(),
     );
   }

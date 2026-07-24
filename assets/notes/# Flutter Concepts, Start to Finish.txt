@@ -1,0 +1,233 @@
+# Flutter Concepts, Start to Finish — Every Widget With Its Own Example
+
+## 0. MaterialApp — The Starting Point
+
+Every Flutter app needs one widget at the top that kicks everything off. `MaterialApp` sets up the app's title, color theme, and which screen shows first. Think of it as the front door of a house — you need it before anyone can walk around inside.
+
+```dart
+void main() {
+  runApp(
+    MaterialApp(
+      home: Text('Hello'),
+    ),
+  );
+}
+```
+
+## 1. Layout Basics
+
+### Container
+A box you can style — color, size, padding. Like a picture frame you put things inside.
+```dart
+Container(
+  width: 100,
+  height: 100,
+  color: Colors.blue,
+  child: Text('Inside the box'),
+)
+```
+
+### Row
+Lines widgets up side-by-side, left to right — like books on a shelf.
+```dart
+Row(
+  children: [
+    Icon(Icons.star),
+    Icon(Icons.star),
+    Icon(Icons.star),
+  ],
+)
+```
+
+### Column
+Stacks widgets top to bottom — like plates in a cupboard.
+```dart
+Column(
+  children: [
+    Text('First line'),
+    Text('Second line'),
+    Text('Third line'),
+  ],
+)
+```
+
+### Center
+Puts whatever's inside it right in the middle of the available space.
+```dart
+Center(
+  child: Text('I am in the middle!'),
+)
+```
+
+### SizedBox
+An invisible box with a fixed width/height, mostly used to add empty space (a spacer).
+```dart
+Column(
+  children: [
+    Text('Top text'),
+    SizedBox(height: 30), // 30 pixels of gap
+    Text('Bottom text'),
+  ],
+)
+```
+
+### Padding
+Adds space *around* a widget, like the white border around a printed photo.
+```dart
+Padding(
+  padding: EdgeInsets.all(16),
+  child: Text('I have space around me'),
+)
+```
+
+## 2. Media
+
+### Image
+Shows a picture, from the internet or bundled inside your app.
+```dart
+Image.network('https://picsum.photos/200')
+```
+
+### Icon
+Shows a small built-in symbol, like a star or heart.
+```dart
+Icon(Icons.favorite)
+```
+
+## 3. Layering
+
+### Stack
+Piles widgets on top of one another, like a stack of papers.
+
+### Positioned
+Used *inside* a `Stack` to say exactly where a widget sits.
+```dart
+Stack(
+  children: [
+    Image.network('https://picsum.photos/200'),
+    Positioned(
+      top: 10,
+      left: 10,
+      child: Text('Caption'),
+    ),
+  ],
+)
+```
+
+## 4. Overflow Handling
+
+### Wrap
+Acts like a `Row`, but drops extra items to a new line instead of overflowing off the screen.
+```dart
+Wrap(
+  children: [
+    Chip(label: Text('Apple')),
+    Chip(label: Text('Banana')),
+    Chip(label: Text('Cherry')),
+  ],
+)
+```
+
+## 5. Lists and Clickable Rows
+
+### ListTile
+A ready-made row layout for lists, with slots for an icon, title, subtitle, and trailing icon.
+
+### onTap
+Runs code when the item is tapped.
+
+### print()
+Writes a message to your debug console (not the screen) so you can check what's happening.
+```dart
+ListTile(
+  title: Text('Settings'),
+  onTap: () {
+    print('Settings tapped!');
+  },
+)
+```
+
+## 6. The App Shell
+
+### Scaffold
+The skeleton of a single screen — slots for a top bar, body, buttons, etc.
+
+### AppBar
+The strip across the top of the screen.
+
+### NavigationBar
+A bar (usually at the bottom) with icons for switching between main sections, like tabs.
+
+### FloatingActionButton
+The round button that "floats" above content, usually bottom-right, for the screen's main action.
+
+### Drawer
+A hidden side menu that slides in when you swipe or tap a menu icon.
+
+```dart
+Scaffold(
+  appBar: AppBar(title: Text('My App')),
+  drawer: Drawer(child: Text('Menu here')),
+  body: Text('Main content'),
+  floatingActionButton: FloatingActionButton(
+    onPressed: () {},
+    child: Icon(Icons.add),
+  ),
+)
+```
+**Analogy:** `Scaffold` is the empty house frame, and `AppBar`, `Drawer`, `body`, `FloatingActionButton` are labeled rooms plugged into that frame.
+
+## 7. Safety
+
+### SafeArea
+Keeps content clear of the phone's own system UI (notch, clock/battery bar, home-swipe strip).
+```dart
+SafeArea(
+  child: Text('This stays visible'),
+)
+```
+
+### Null Safety (`?`, `!`, `??`)
+Protects your app from crashing when data is missing (`null` means "nothing here").
+- `?` — this value is allowed to be empty: `String? name;`
+- `!` — "trust me, this isn't empty" (tells Dart to stop worrying)
+- `??` — "use this backup value if the first is empty"
+```dart
+String? name; // might be empty
+print(name ?? 'Guest'); // prints 'Guest' if name is empty
+```
+
+## 8. Interactivity Foundation
+
+### StatefulWidget
+A widget that's allowed to change over time (unlike `StatelessWidget`, which never changes).
+
+### setState()
+Tells Flutter "something changed, please redraw the screen." Without it, the screen won't update even if a variable changed behind the scenes.
+
+```dart
+class Counter extends StatefulWidget {
+  @override
+  _CounterState createState() => _CounterState();
+}
+
+class _CounterState extends State<Counter> {
+  int count = 0;
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      onPressed: () {
+        setState(() {
+          count = count + 1;
+        });
+      },
+      child: Text('Tapped $count times'),
+    );
+  }
+}
+```
+
+---
+
+That's everything from `MaterialApp` down to interactivity, each with its own runnable example. Next up in your project: splitting widgets into separate files, understanding the widget tree, and `ValueNotifier` — exactly what you need to fix your page-switching bug.
