@@ -16,68 +16,82 @@ class _ProfilePageState extends State<ProfilePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(20.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          TextField(
-            controller: controller,
-            decoration: InputDecoration(
-              border: OutlineInputBorder(),
-            ), // InputDecoration
-            onEditingComplete: () => setState(() {}),
-          ), // TextField
-          Text(controller.text),
-          Checkbox(
-            tristate: true,
-            value: isChecked,
-            onChanged: (bool? value) {
-              setState(() {
-                isChecked = value;
-              });
-            },
-          ), // Checkbox
-          CheckboxListTile(
-            tristate: true,
-            title: Text('Click me'),
-            value: isChecked,
-            onChanged: (bool? value) {
-              setState(() {
-                isChecked = value;
-              });
-            },
-          ),
-          Switch.adaptive(
-            value: Isswitched,
-            onChanged: (value) {
-              setState(() {
-                Isswitched = value;
-              });
-            },
-          ),
-          SwitchListTile.adaptive(
-            title: Text('Click me'),
-            value: Isswitched,
-            onChanged: (value) {
-              setState(() {
-                Isswitched = value;
-              });
-            },
-          ),
-          Slider.adaptive(
-            max: 10,
-            value: Slidervalue,
-            divisions: 10,
-            onChanged: (double value) {
-              setState(() {
-                Slidervalue = value;
-              });
-              print(Slidervalue);
-            },
-          ),
-        ],
-      ), // Column
+    return SingleChildScrollView(
+      child: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            TextField(
+              controller: controller,
+              decoration: InputDecoration(
+                border: OutlineInputBorder(),
+              ), // InputDecoration
+              onEditingComplete: () => setState(() {}),
+            ), // TextField
+            Text(controller.text),
+            Checkbox(
+              tristate: true,
+              value: isChecked,
+              onChanged: (bool? value) {
+                setState(() {
+                  isChecked = value;
+                });
+              },
+            ), // Checkbox
+            CheckboxListTile(
+              tristate: true,
+              title: Text('Click me'),
+              value: isChecked,
+              onChanged: (bool? value) {
+                setState(() {
+                  isChecked = value;
+                });
+              },
+            ),
+            Switch.adaptive(
+              value: Isswitched,
+              onChanged: (value) {
+                setState(() {
+                  Isswitched = value;
+                });
+              },
+            ),
+            SwitchListTile.adaptive(
+              title: Text('Click me'),
+              value: Isswitched,
+              onChanged: (value) {
+                setState(() {
+                  Isswitched = value;
+                });
+              },
+            ),
+            Slider.adaptive(
+              max: 10,
+              value: Slidervalue,
+              divisions: 10,
+              onChanged: (double value) {
+                setState(() {
+                  Slidervalue = value;
+                });
+                print(Slidervalue);
+              },
+            ),
+            Image.asset(
+              'assets/image/bg.jpg',
+              width: 200,
+              height: 200,
+              fit: BoxFit.cover,
+            ),
+            Image.asset(
+              'assets/image/bg.jpg',
+              width: 200,
+              height: 200,
+              fit: BoxFit.cover,
+            ),
+          ],
+        ), // Column
+      ),
     ); // Padding
   }
 }
