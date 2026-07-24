@@ -4,7 +4,7 @@ import '../../Views/pages/Profilepage.dart';
 import '../widgets/navB.dart';
 import '/data/notifires.dart';
 
-List<Widget> pages = [Home_page(), Progile_page()];
+List<Widget> pages = [Home_page(), ProfilePage()];
 
 class WidgetTree extends StatelessWidget {
   const WidgetTree({super.key});
