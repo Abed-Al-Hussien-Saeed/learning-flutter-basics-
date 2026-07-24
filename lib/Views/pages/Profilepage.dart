@@ -77,21 +77,20 @@ class _ProfilePageState extends State<ProfilePage> {
                 print(Slidervalue);
               },
             ),
-            Image.asset(
-              'assets/image/bg.jpg',
-              width: 200,
-              height: 200,
-              fit: BoxFit.cover,
+            GestureDetector(
+              onTap: () {
+                print("u tapped the image");
+              },
+              child: Image.asset(
+                'assets/image/bg.jpg',
+                width: 200,
+                height: 200,
+                fit: BoxFit.cover,
+              ),
             ),
-            Image.asset(
-              'assets/image/bg.jpg',
-              width: 200,
-              height: 200,
-              fit: BoxFit.cover,
-            ),
-          ],
-        ), // Column
+          ], //childrenof the column
+        ),
       ),
-    ); // Padding
+    );
   }
 }
