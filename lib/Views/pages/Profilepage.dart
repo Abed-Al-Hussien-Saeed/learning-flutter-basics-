@@ -24,9 +24,7 @@ class _ProfilePageState extends State<ProfilePage> {
             decoration: InputDecoration(
               border: OutlineInputBorder(),
             ), // InputDecoration
-            onEditingComplete: () {
-              setState(() {});
-            },
+            onEditingComplete: () => setState(() {}),
           ), // TextField
           Text(controller.text),
           Checkbox(
