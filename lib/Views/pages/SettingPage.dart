@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class Settingpage extends StatefulWidget {
-  const Settingpage({super.key});
-
+  const Settingpage({super.key, required this.title});
+  final String title;
   @override
   State<Settingpage> createState() => _SettingpageState();
 }
@@ -18,7 +18,7 @@ class _SettingpageState extends State<Settingpage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("settings app "),
+        title: Text(widget.title),
         leading: BackButton(
           onPressed: () {
             Navigator.pop(context);
