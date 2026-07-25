@@ -31,6 +31,18 @@ class _SettingpageState extends State<Settingpage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              ElevatedButton(
+                onPressed: () {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text("snackbar"),
+                      duration: Duration(seconds: 1),
+                      behavior: SnackBarBehavior.floating,
+                    ),
+                  );
+                },
+                child: Text('open snackbar'),
+              ),
               DropdownButton(
                 value: menuitem,
                 items: [
