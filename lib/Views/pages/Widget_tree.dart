@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:the_ultimate_flutter_tutorial_for_beginners/Views/pages/SettingPage.dart';
 import '../../Views/pages/Homepage.dart';
 import '../../Views/pages/Profilepage.dart';
 import '../widgets/navB.dart';
@@ -25,6 +26,19 @@ class WidgetTree extends StatelessWidget {
                 return Icon(Isdartkmode ? Icons.dark_mode : Icons.light_mode);
               },
             ),
+          ),
+          IconButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return Settingpage();
+                  },
+                ),
+              );
+            },
+            icon: Icon(Icons.settings),
           ),
         ],
       ), // or add drawer here

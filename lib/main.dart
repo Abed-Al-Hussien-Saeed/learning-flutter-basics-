@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:the_ultimate_flutter_tutorial_for_beginners/Views/pages/SettingPage.dart';
 import 'package:the_ultimate_flutter_tutorial_for_beginners/Views/pages/Widget_tree.dart';
 import 'package:the_ultimate_flutter_tutorial_for_beginners/data/notifires.dart';
 
