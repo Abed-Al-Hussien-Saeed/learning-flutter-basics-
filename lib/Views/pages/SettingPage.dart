@@ -17,14 +17,7 @@ class _SettingpageState extends State<Settingpage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("settings app "),
-        leading: BackButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-        ),
-      ),
+      appBar: AppBar(title: Text("settings app ")),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(20.0),
