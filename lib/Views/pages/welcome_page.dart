@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:the_ultimate_flutter_tutorial_for_beginners/Views/pages/Widget_tree.dart';
+import 'package:the_ultimate_flutter_tutorial_for_beginners/Views/widgets/Hero_Widget.dart';
 
 class WelcomePage extends StatelessWidget {
   const WelcomePage({super.key});
@@ -13,14 +14,7 @@ class WelcomePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            ClipRRect(
-              borderRadius: BorderRadiusGeometry.circular(20.0),
-              child: Image.asset(
-                'assets/image/bg.jpg',
-                width: 200,
-                height: 200,
-              ),
-            ),
+            HeroWidget(),
             FilledButton(
               onPressed: () {
                 Navigator.pushReplacement(
