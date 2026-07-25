@@ -1,5 +1,6 @@
+// ignore_for_file: non_constant_identifier_names, file_names
+
 import 'package:flutter/material.dart';
-import 'package:the_ultimate_flutter_tutorial_for_beginners/data/notifires.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
@@ -13,7 +14,7 @@ class _ProfilePageState extends State<ProfilePage> {
   bool? isChecked = false;
   bool Isswitched = false;
   double Slidervalue = 0.0;
-
+  String? menuitem = 'e1';
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -22,6 +23,19 @@ class _ProfilePageState extends State<ProfilePage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            DropdownButton(
+              value: menuitem,
+              items: [
+                DropdownMenuItem(value: "e1", child: Text("ELEMET 1 ")),
+                DropdownMenuItem(value: "e2", child: Text("ELEMET 2 ")),
+                DropdownMenuItem(value: "e3", child: Text("ELEMET 3 ")),
+              ],
+              onChanged: (String? value) {
+                setState(() {
+                  menuitem = value;
+                });
+              },
+            ),
             TextField(
               controller: controller,
               decoration: InputDecoration(
