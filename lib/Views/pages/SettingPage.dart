@@ -53,6 +53,7 @@ class _SettingpageState extends State<Settingpage> {
                 },
                 child: Text('alert btn'),
               ),
+              Divider(color: Colors.red, thickness: 2, endIndent: 200),
               ElevatedButton(
                 onPressed: () {
                   ScaffoldMessenger.of(context).showSnackBar(
