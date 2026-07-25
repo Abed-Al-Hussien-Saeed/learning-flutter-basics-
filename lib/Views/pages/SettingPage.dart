@@ -33,6 +33,28 @@ class _SettingpageState extends State<Settingpage> {
             children: [
               ElevatedButton(
                 onPressed: () {
+                  showDialog(
+                    context: context,
+                    builder: (context) {
+                      return AlertDialog(
+                        title: Text("hello hru are u good cuz we aren't"),
+                        content: Text("u are in a violation"),
+                        actions: [
+                          FilledButton(
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
+                            child: Text('close '),
+                          ),
+                        ],
+                      );
+                    },
+                  );
+                },
+                child: Text('alert btn'),
+              ),
+              ElevatedButton(
+                onPressed: () {
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(
                       content: Text("snackbar"),
