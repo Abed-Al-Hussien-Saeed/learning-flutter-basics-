@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:the_ultimate_flutter_tutorial_for_beginners/Views/pages/SettingPage.dart';
-import '../../Views/pages/Homepage.dart';
+import '../../Views/pages/HomePage.dart';
 import '../../Views/pages/Profilepage.dart';
 import '../widgets/navB.dart';
 import '/data/notifires.dart';
 
-List<Widget> pages = [Home_page(), ProfilePage()];
+List<Widget> pages = [HomePage(), ProfilePage()];
 
 class WidgetTree extends StatelessWidget {
   const WidgetTree({super.key});
