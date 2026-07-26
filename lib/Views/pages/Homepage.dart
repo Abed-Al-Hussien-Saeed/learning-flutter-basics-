@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:the_ultimate_flutter_tutorial_for_beginners/Views/widgets/hero_widget.dart';
+import 'package:the_ultimate_flutter_tutorial_for_beginners/data/constant.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -20,8 +21,8 @@ class HomePage extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text('Basic Layout'),
-                    Text('The description of this'),
+                    Text('Basic Layout', style: ktextstyle.title),
+                    Text('The description of this', style: ktextstyle.des ),
                   ],
                 ), // Column
               ), // Padding
