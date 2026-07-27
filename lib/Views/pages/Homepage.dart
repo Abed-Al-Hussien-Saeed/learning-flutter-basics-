@@ -22,7 +22,7 @@ class HomePage extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text('Basic Layout', style: ktextstyle.title),
-                    Text('The description of this', style: ktextstyle.des ),
+                    Text('The description of this', style: ktextstyle.des),
                   ],
                 ), // Column
               ), // Padding

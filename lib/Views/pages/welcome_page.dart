@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:the_ultimate_flutter_tutorial_for_beginners/Views/pages/SettingPage.dart';
-import 'package:the_ultimate_flutter_tutorial_for_beginners/Views/pages/Widget_tree.dart';
+import 'package:the_ultimate_flutter_tutorial_for_beginners/Views/pages/Logine_page.dart';
+
 import 'package:lottie/lottie.dart';
 
 class WelcomePage extends StatelessWidget {
@@ -31,7 +31,7 @@ class WelcomePage extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                     builder: (context) {
-                      return WidgetTree();
+                      return LoginePage();
                     },
                   ),
                 );
@@ -47,7 +47,7 @@ class WelcomePage extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                     builder: (context) {
-                      return Settingpage(title: 'hell settings');
+                      return LoginePage();
                     },
                   ),
                 );

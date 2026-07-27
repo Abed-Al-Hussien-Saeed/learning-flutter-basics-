@@ -95,7 +95,7 @@ class _SettingpageState extends State<Settingpage> {
                     isChecked = value;
                   });
                 },
-              ), // Checkbox
+              ),
               CheckboxListTile(
                 tristate: true,
                 title: Text('Click me'),
