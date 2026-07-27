@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+
 import 'package:the_ultimate_flutter_tutorial_for_beginners/Views/widgets/Hero_Widget.dart';
 
 TextEditingController controller = TextEditingController();
@@ -13,8 +13,15 @@ class LoginePage extends StatefulWidget {
 
 class _LoginePageState extends State<LoginePage> {
   @override
+  void initState() {
+    // TODO: implement initState
+    print("helllo i am inside of your mind in an init state ");
+    super.initState();
+  }
+
+  @override
   void dispose() {
-    // TODO: implement dispose
+    controller.dispose;
     super.dispose();
   }
 
