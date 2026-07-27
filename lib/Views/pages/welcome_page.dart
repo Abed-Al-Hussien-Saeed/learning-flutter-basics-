@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:the_ultimate_flutter_tutorial_for_beginners/Views/pages/SettingPage.dart';
 import 'package:the_ultimate_flutter_tutorial_for_beginners/Views/pages/Widget_tree.dart';
 import 'package:lottie/lottie.dart';
 
@@ -20,15 +21,10 @@ class WelcomePage extends StatelessWidget {
             /*Lottie.network(
               'https://lottie.host/7932e43b-c30e-4aef-85d2-2651e429be2c/yZmOfZYWmQ.lottie',
             ),*/
-            Center(
-              child: Lottie.asset(
-                'assets/lottie/Welcome.Json',
-                width: 100,
-                height: 100,
-              ),
-            ),
+            Lottie.asset('assets/lottie/Welcome.Json'),
 
-            Text("fluttter map", style: TextStyle()),
+            FittedBox(child: Text("fluttter map", style: TextStyle())),
+            SizedBox(width: 200),
             FilledButton(
               onPressed: () {
                 Navigator.pushReplacement(
@@ -40,7 +36,23 @@ class WelcomePage extends StatelessWidget {
                   ),
                 );
               },
+              style: FilledButton.styleFrom(
+                minimumSize: Size(double.infinity, 40.0),
+              ),
               child: Text("press me "),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return Settingpage(title: 'hell settings');
+                    },
+                  ),
+                );
+              },
+              child: Text("register"),
             ),
           ],
         ),
