@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:the_ultimate_flutter_tutorial_for_beginners/Views/pages/Widget_tree.dart';
-import 'package:the_ultimate_flutter_tutorial_for_beginners/Views/widgets/Hero_Widget.dart';
+import 'package:lottie/lottie.dart';
 
 class WelcomePage extends StatelessWidget {
   const WelcomePage({super.key});
@@ -14,7 +14,21 @@ class WelcomePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            HeroWidget(),
+            /*  Lottie.network(
+              'https://lottie.host/df42d64c-45fe-4df9-b60f-e5947d065f83/yuFqwge8X5.json',
+            ),*/
+            /*Lottie.network(
+              'https://lottie.host/7932e43b-c30e-4aef-85d2-2651e429be2c/yZmOfZYWmQ.lottie',
+            ),*/
+            Center(
+              child: Lottie.asset(
+                'assets/lottie/Welcome.Json',
+                width: 100,
+                height: 100,
+              ),
+            ),
+
+            Text("fluttter map", style: TextStyle()),
             FilledButton(
               onPressed: () {
                 Navigator.pushReplacement(
